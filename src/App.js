@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react";
+import "./App.css";
+import { Form } from "./Components/Form";
+import { Registered } from "./Components/Registered";
+import { ToastContainer } from "react-toastify";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ToastContainer theme="colored"></ToastContainer>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Form />}></Route>
+          <Route path="/registered" element={<Registered />}></Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
